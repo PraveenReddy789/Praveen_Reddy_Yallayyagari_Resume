@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praveen Reddy Yallayyagari - Data Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .name {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #d946ef 0%, #f43f5e 50%, #fb923c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 28px;
+            color: #666;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 15px;
+            color: #666;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-item a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+
+        /* Profile */
+        .profile-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 35px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .job-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .job-date {
+            font-size: 15px;
+            color: #666;
+        }
+
+        .company {
+            font-size: 17px;
+            color: #d946ef;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .job-location {
+            font-size: 15px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .job ul {
+            padding-left: 20px;
+        }
+
+        .job li {
+            margin-bottom: 10px;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .job li::marker {
+            color: #d946ef;
+            font-weight: bold;
+        }
+
+        /* Notable Achievements */
+        .achievement {
+            background: #fafafa;
+            padding: 18px;
+            margin-bottom: 12px;
+            border-left: 4px solid #d946ef;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .achievement::before {
+            content: '✓';
+            position: absolute;
+            left: -12px;
+            top: 18px;
+            background: #d946ef;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .achievement-text {
+            color: #6b21a8;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Projects */
+        .project {
+            margin-bottom: 30px;
+        }
+
+        .project-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .project ul {
+            padding-left: 20px;
+        }
+
+        .project li {
+            margin-bottom: 8px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .skill-tag {
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Different color schemes for skills */
+        .skill-tag:nth-child(3n+1) { background: #fce7f3; color: #9f1239; }
+        .skill-tag:nth-child(3n+2) { background: #ede9fe; color: #5b21b6; }
+        .skill-tag:nth-child(3n) { background: #dbeafe; color: #1e40af; }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .degree {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .degree-date {
+            float: right;
+            color: #666;
+        }
+
+        .institution {
+            font-size: 16px;
+            color: #d946ef;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .cgpa {
+            font-size: 15px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Accomplishments */
+        .accomplishments-section {
+            margin-top: 30px;
+        }
+
+        .accomplishment-category {
+            margin-bottom: 25px;
+        }
+
+        .accomplishment-category h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .accomplishment-category ul {
+            padding-left: 20px;
+        }
+
+        .accomplishment-category li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .accomplishment-category li::marker {
+            color: #d946ef;
+        }
+
+        /* Print button */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #d946ef, #f43f5e);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(217, 70, 239, 0.4);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 70, 239, 0.5);
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .print-btn {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            .name {
+                font-size: 36px;
+            }
+            .title {
+                font-size: 22px;
+            }
+            .section-title {
+                font-size: 26px;
+            }
+            .job-header {
+                flex-direction: column;
+            }
+            .print-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="name">Praveen Reddy Yallayyagari</h1>
+            <p class="title">Data Engineer</p>
+            <div class="contact">
+                <span class="contact-item">📧 praveenreddy.yallayyagari@gmail.com</span>
+                <span class="contact-item">📞 +91-9398242064</span>
+                <span class="contact-item">📍 India</span>
+                <span class="contact-item">
+                    <a href="https://www.linkedin.com/in/praveenreddy-yallayyagari-dataengineer/" target="_blank">
+                        🔗 linkedin.com/in/praveenreddy-yallayyagari-dataengineer
+                    </a>
+                </span>
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="section">
+            <h2 class="section-title">Profile</h2>
+            <p class="profile-text">
+                Data Engineer with 2+ years of experience building production-grade ETL pipelines, real-time streaming systems, and analytics infrastructure on cloud platforms. Experienced in designing end-to-end data workflows from ingestion to visualization, implementing dbt transformation models, and orchestrating complex data pipelines with Airflow. Skilled in Python, SQL, and modern data stack tools including BigQuery, Redshift, Apache Kafka, and dbt. Strong background in API integrations, webhook systems, and event-driven architectures for AI-powered applications serving BFSI and customer support domains.
+            </p>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <h3 class="job-title">Data Engineer</h3>
+                    <span class="job-date">Jul 2024 – Present</span>
+                </div>
+                <p class="company">Aiverbalyze Technologies Pvt. Ltd • Mumbai, Maharashtra (Remote)</p>
+                <ul>
+                    <li>Built and maintained real-time data pipelines processing 200K+ daily AI call events using Python, GCP Pub/Sub, and BigQuery with sub-5-second latency for webhook delivery to enterprise clients.</li>
+                    <li>Designed ETL workflows integrating data from multiple sources (APIs, databases, file systems) into data warehouses using Python and cloud services, reducing manual data processing effort by 90%.</li>
+                    <li>Developed dbt transformation models following staging-intermediate-mart architecture to create analytics-ready datasets, enabling business teams to analyze agent performance, client efficiency, and operational KPIs.</li>
+                    <li>Implemented automated data quality testing and validation frameworks ensuring 99.99% data availability and reliability for downstream analytics and reporting systems.</li>
+                    <li>Created RESTful APIs and webhook integration systems with OAuth2 authentication, processing real-time events and delivering notifications to BFSI clients with 99.99% delivery reliability.</li>
+                    <li>Built conversational analytics capabilities tracking 25+ performance KPIs including promise-to-pay rates, call duration metrics, and collection efficiency, contributing to 20% revenue growth.</li>
+                    <li>Orchestrated data pipeline workflows using Airflow (Cloud Composer) with scheduled incremental refreshes every 15 minutes, balancing real-time requirements with analytical processing needs.</li>
+                    <li>Collaborated with cross-functional teams including ML engineers, business analysts, and product managers to understand data requirements and deliver integrated solutions serving multiple stakeholders.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3 class="job-title">Intern, Data Engineer</h3>
+                    <span class="job-date">Apr 2024 – Jul 2024</span>
+                </div>
+                <p class="company">Aiverbalyze Technologies Pvt. Ltd</p>
+                <ul>
+                    <li>Engineered batch data ingestion pipelines automating daily imports from Pub/Sub to BigQuery with data validation checks, achieving 99.99% data availability for reporting systems.</li>
+                    <li>Integrated call recording storage with Amazon S3 using boto3 SDK, implementing parallel uploads and optimizing MongoDB queries to decrease API response latency by 45%.</li>
+                    <li>Automated Power BI report refresh workflows through REST API integration, reducing manual refresh time by 30% and improving overall reporting accuracy.</li>
+                    <li>Worked across 3 cross-functional teams to synchronize data flows between ML model outputs, analytics dashboards, and backend services using API contracts and validation protocols.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Notable Achievements -->
+        <div class="section">
+            <h2 class="section-title">Notable Achievements</h2>
+            <div class="achievement">
+                <p class="achievement-text">Built and maintained real-time data pipelines processing 200K+ daily AI call events with sub-5-second latency for enterprise clients.</p>
+            </div>
+            <div class="achievement">
+                <p class="achievement-text">Designed ETL workflows integrating data from multiple sources, reducing manual data processing effort by 90%.</p>
+            </div>
+            <div class="achievement">
+                <p class="achievement-text">Implemented automated data quality testing and validation frameworks ensuring 99.99% data availability and reliability.</p>
+            </div>
+            <div class="achievement">
+                <p class="achievement-text">Built conversational analytics capabilities tracking 25+ performance KPIs, contributing to 20% revenue growth.</p>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="project">
+                <h3 class="project-name">AI Analytics Chatbot</h3>
+                <ul>
+                    <li>Built internal analytics chatbot enabling non-technical stakeholders to query data using natural language, automatically converting questions to SQL and executing against dbt mart tables.</li>
+                    <li>Integrated LangChain and Claude API for text-to-SQL generation with 95%+ accuracy on business questions, eliminating need for manual SQL queries across teams.</li>
+                    <li>Implemented automated PDF report generation with customizable templates, reducing monthly reporting time from 4 hours to under 30 seconds for stakeholders.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3 class="project-name">AI Brainstorming Chatbot</h3>
+                <ul>
+                    <li>Built conversational AI application with LangChain and Mistral-7B, implementing API endpoints for multi-turn dialogue with 60% improved contextual retention.</li>
+                    <li>Integrated secure token-based authentication with request validation, mitigating 90% of unauthorized API access attempts.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3 class="project-name">Serverless ChatGPT App on AWS</h3>
+                <ul>
+                    <li>Developed serverless REST API using AWS Lambda and API Gateway, scaling to handle 10K+ user queries per week with 99.9% uptime.</li>
+                    <li>Implemented AWS Bedrock integration for LLM inference, reducing backend cost by 30% through on-demand provisioning and CloudWatch monitoring.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3 class="project-name">AWS ETL Data Pipeline</h3>
+                <ul>
+                    <li>Built automated ETL pipeline loading structured datasets from S3 to Amazon Redshift using AWS Glue for data transformation and near real-time analytics.</li>
+                    <li>Orchestrated 5 sequential ETL jobs using AWS Step Functions with fail-safe retries, error handling, and notification webhooks.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Amazon Redshift</span>
+                <span class="skill-tag">Apache Airflow</span>
+                <span class="skill-tag">Apache Kafka</span>
+                <span class="skill-tag">GCP Pub/Sub</span>
+                <span class="skill-tag">AWS Lambda</span>
+                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">LangChain</span>
+                <span class="skill-tag">AWS Glue</span>
+                <span class="skill-tag">BigQuery</span>
+                <span class="skill-tag">Streamlit</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">OAuth2</span>
+                <span class="skill-tag">PySpark</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">dbt</span>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div>
+                    <strong class="degree">B Tech in Computer Science and Engineering (Data Science)</strong>
+                    <span class="degree-date">Dec 2021 – Apr 2024</span>
+                </div>
+                <p class="institution">Srinivasa Ramanujan Institute of Technology</p>
+                <p class="cgpa">CGPA: 8.37</p>
+            </div>
+        </div>
+
+        <!-- Accomplishments -->
+        <div class="section accomplishments-section">
+            <h2 class="section-title">Accomplishments</h2>
+            
+            <div class="accomplishment-category">
+                <h3>Certifications</h3>
+                <ul>
+                    <li><strong>Databricks Lakehouse Fundamentals</strong> - Databricks</li>
+                    <li><strong>Google AI Essentials</strong> - Coursera</li>
+                </ul>
+            </div>
+
+            <div class="accomplishment-category">
+                <h3>Awards</h3>
+                <ul>
+                    <li><strong>Top 0.05% among 600,000+ competitors in TCS CodeVita</strong> - TCS</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">📄 Download PDF</button>
+
+</body>
+</html>
