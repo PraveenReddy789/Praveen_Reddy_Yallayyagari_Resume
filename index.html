@@ -31,19 +31,17 @@
             text-align: center;
             margin-bottom: 35px;
         }
-        
+
         .name {
             font-family: Georgia, 'Times New Roman', serif;
             font-size: 48px;
             font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            padding: 25px 40px;
             background: linear-gradient(135deg, #d946ef 0%, #f43f5e 50%, #fb923c 100%);
-            display: inline-block;
-            border-radius: 8px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
         }
-
 
         .title {
             font-size: 28px;
@@ -346,6 +344,7 @@
             .contact-item a[href^="mailto"] {
                 color: #333 !important;
                 text-decoration: none !important;
+                pointer-events: none;
             }
             
             .contact-item a[href^="mailto"]::after {
@@ -354,13 +353,10 @@
             
             /* Header - keep tight */
             .header {
-                page-break-after: avoid !important;
-                break-after: avoid !important;
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
+                page-break-after: avoid;
+                break-after: avoid;
                 margin-bottom: 30px;
             }
-
             
             .name {
                 page-break-after: avoid;
@@ -743,22 +739,21 @@
         </div>
     </div>
 
-    <button class="print-btn" onclick="downloadPDF()">📄 Download Resume</button>
+    <button class="print-btn" onclick="downloadPDF()">📄 Download PDF</button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-   <script>
-    function downloadPDF() {
-        const element = document.querySelector(".container");
-        const opt = {
-            margin: 0.5,
-            filename: 'Praveen_Reddy_Data_Engineer_Resume.pdf',
-            image: { type: 'jpeg', quality: 1 },
-            html2canvas: { scale: 3 },
-            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-        };
-        html2pdf().set(opt).from(element).save();
-    }
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        function downloadPDF() {
+            alert(
+                "📄 To download as PDF:\n\n" +
+                "1. Print dialog will open\n" +
+                "2. Select 'Save as PDF' or 'Print to PDF'\n" +
+                "3. Enable 'Background graphics' option ✓\n" +
+                "4. Click Save\n\n" +
+                "Press OK to continue..."
+            );
+            window.print();
+        }
     </script>
-
 </body>
 </html>
