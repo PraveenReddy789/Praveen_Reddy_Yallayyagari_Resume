@@ -5,86 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Praveen Reddy Yallayyagari - Data Engineer</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f9f9f9;
+            line-height: 1.6; color: #333; background: #f9f9f9;
         }
 
         .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            background: white;
-            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            max-width: 900px; margin: 0 auto; padding: 60px 40px;
+            background: white; box-shadow: 0 0 30px rgba(0,0,0,0.1);
         }
 
-        /* Header */
-        .header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+        .header { text-align: center; margin-bottom: 35px; }
 
         .name {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: 48px;
-            font-weight: 700;
+            font-family: Georgia, 'Times New Roman', serif; font-size: 48px; font-weight: 700;
             background: linear-gradient(135deg, #d946ef 0%, #f43f5e 50%, #fb923c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 10px;
         }
 
-        .title {
-            font-size: 28px;
-            color: #666;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
+        .title { font-size: 28px; color: #666; font-weight: 400; margin-bottom: 20px; }
 
         .contact {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 15px;
-            color: #666;
+            display: flex; justify-content: center; flex-wrap: wrap;
+            gap: 20px; font-size: 15px; color: #666;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-        }
+        .contact-item { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+        .contact-item a { color: #0066cc; text-decoration: none; }
+        .contact-item a:hover { text-decoration: underline; }
 
-        .contact-item a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Social buttons */
+        /* SOCIAL BUTTONS - always row */
         .social-links {
             display: flex;
+            flex-direction: row;
             justify-content: center;
+            align-items: center;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-btn {
             display: inline-flex;
+            flex-direction: row;
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
@@ -94,509 +59,174 @@
             font-size: 14px;
             transition: all 0.3s;
             color: white;
-        }
-        
-        .social-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        
-        .gmail-btn {
-            background: #EA4335;
-        }
-        
-        .linkedin-btn {
-            background: #0077b5;
-        }
-        
-        .github-btn {
-            background: #333;
-        }
-        
-        .social-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
+            white-space: nowrap;
         }
 
-        /* Sections */
-        .section {
-            margin-bottom: 40px;
-        }
+        .social-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .gmail-btn { background: #EA4335; }
+        .linkedin-btn { background: #0077b5; }
+        .github-btn { background: #333; }
+        .social-btn svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+
+        .section { margin-bottom: 40px; }
 
         .section-title {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-size: 32px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e5e5e5;
+            font-family: Georgia, 'Times New Roman', serif; font-size: 32px; font-weight: 700;
+            color: #1a1a1a; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 2px solid #e5e5e5;
         }
 
-        /* Profile */
-        .profile-text {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #444;
-        }
+        .profile-text { font-size: 16px; line-height: 1.8; color: #444; }
 
-        /* Experience */
-        .job {
-            margin-bottom: 25px;
-        }
+        .job { margin-bottom: 25px; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+        .job-title { font-size: 20px; font-weight: 700; color: #1a1a1a; }
+        .job-date { font-size: 15px; color: #666; }
+        .company { font-size: 17px; color: #d946ef; font-weight: 600; margin-bottom: 15px; }
+        .job ul { padding-left: 20px; }
+        .job li { margin-bottom: 10px; color: #444; line-height: 1.7; }
+        .job li::marker { color: #d946ef; font-weight: bold; }
 
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
-        }
-
-        .job-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        .job-date {
-            font-size: 15px;
-            color: #666;
-        }
-
-        .company {
-            font-size: 17px;
-            color: #d946ef;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .job ul {
-            padding-left: 20px;
-        }
-
-        .job li {
-            margin-bottom: 10px;
-            color: #444;
-            line-height: 1.7;
-        }
-
-        .job li::marker {
-            color: #d946ef;
-            font-weight: bold;
-        }
-
-        /* Notable Achievements */
         .achievement {
-            background: #fafafa;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-left: 4px solid #d946ef;
-            border-radius: 4px;
-            position: relative;
+            background: #fafafa; padding: 15px 15px 15px 30px; margin-bottom: 10px;
+            border-left: 4px solid #d946ef; border-radius: 4px; position: relative;
         }
-
         .achievement::before {
-            content: '✓';
-            position: absolute;
-            left: -12px;
-            top: 15px;
-            background: #d946ef;
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: bold;
+            content: '✓'; position: absolute; left: -12px; top: 15px;
+            background: #d946ef; color: white; width: 24px; height: 24px;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 14px; font-weight: bold;
         }
+        .achievement-text { color: #6b21a8; font-size: 15px; line-height: 1.5; }
 
-        .achievement-text {
-            color: #6b21a8;
-            font-size: 15px;
-            line-height: 1.5;
-        }
+        .project { margin-bottom: 20px; }
+        .project-name { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+        .project ul { padding-left: 20px; }
+        .project li { margin-bottom: 8px; color: #444; line-height: 1.6; }
 
-        /* Projects */
-        .project {
-            margin-bottom: 20px;
-        }
-
-        .project-name {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-        }
-
-        .project ul {
-            padding-left: 20px;
-        }
-
-        .project li {
-            margin-bottom: 8px;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        /* Skills */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
-
+        .skills-container { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
         .skill-tag {
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: transform 0.2s;
-            display: inline-block;
-            margin: 0;
+            padding: 10px 20px; border-radius: 25px; font-size: 14px; font-weight: 500;
+            transition: transform 0.2s; display: inline-block; margin: 0;
         }
-
-        .skill-tag:hover {
-            transform: translateY(-2px);
-        }
-
+        .skill-tag:hover { transform: translateY(-2px); }
         .skill-tag:nth-child(3n+1) { background: #fce7f3; color: #9f1239; }
         .skill-tag:nth-child(3n+2) { background: #ede9fe; color: #5b21b6; }
-        .skill-tag:nth-child(3n) { background: #dbeafe; color: #1e40af; }
+        .skill-tag:nth-child(3n)   { background: #dbeafe; color: #1e40af; }
 
-        /* Education */
-        .education-item {
-            margin-bottom: 15px;
-        }
+        .education-item { margin-bottom: 15px; }
+        .degree { font-size: 18px; font-weight: 700; color: #1a1a1a; }
+        .degree-date { float: right; color: #666; }
+        .institution { font-size: 16px; color: #d946ef; font-weight: 600; margin-top: 5px; }
+        .cgpa { font-size: 15px; color: #666; margin-top: 5px; }
 
-        .degree {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
+        .accomplishments-section { margin-top: 30px; }
+        .accomplishment-category { margin-bottom: 25px; }
+        .accomplishment-category h3 { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; }
+        .accomplishment-category ul { padding-left: 20px; }
+        .accomplishment-category li { margin-bottom: 8px; color: #444; }
+        .accomplishment-category li::marker { color: #d946ef; }
 
-        .degree-date {
-            float: right;
-            color: #666;
-        }
-
-        .institution {
-            font-size: 16px;
-            color: #d946ef;
-            font-weight: 600;
-            margin-top: 5px;
-        }
-
-        .cgpa {
-            font-size: 15px;
-            color: #666;
-            margin-top: 5px;
-        }
-
-        /* Accomplishments */
-        .accomplishments-section {
-            margin-top: 30px;
-        }
-
-        .accomplishment-category {
-            margin-bottom: 25px;
-        }
-
-        .accomplishment-category h3 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 12px;
-        }
-
-        .accomplishment-category ul {
-            padding-left: 20px;
-        }
-
-        .accomplishment-category li {
-            margin-bottom: 8px;
-            color: #444;
-        }
-
-        .accomplishment-category li::marker {
-            color: #d946ef;
-        }
-
-        /* Print button */
         .print-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
+            position: fixed; bottom: 30px; right: 30px;
             background: linear-gradient(135deg, #d946ef, #f43f5e);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(217, 70, 239, 0.4);
-            transition: all 0.3s;
-            z-index: 1000;
+            color: white; padding: 15px 30px; border: none; border-radius: 50px;
+            font-size: 16px; font-weight: 600; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(217, 70, 239, 0.4); transition: all 0.3s; z-index: 1000;
         }
+        .print-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(217, 70, 239, 0.5); }
 
-        .print-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(217, 70, 239, 0.5);
-        }
-
+        /* ===== PRINT / PDF STYLES ===== */
         @media print {
-            * {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
+            * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            body { background: white; margin: 0; padding: 0; }
+            .container { box-shadow: none; padding: 20px 30px; max-width: 100%; margin: 0; }
+            .print-btn { display: none !important; }
 
-            body {
-                background: white;
-                margin: 0;
-                padding: 0;
-            }
-
-            .container {
-                box-shadow: none;
-                padding: 20px 30px;
-                max-width: 100%;
-                margin: 0;
-            }
-
-            .print-btn {
-                display: none !important;
-            }
-
-            .header {
-                page-break-after: avoid;
-                break-after: avoid;
-                margin-bottom: 20px;
-            }
+            .header { page-break-after: avoid; break-after: avoid; margin-bottom: 20px; }
 
             .name {
-                page-break-after: avoid;
-                break-after: avoid;
-                margin-bottom: 6px;
-                font-size: 40px;
-                color: #d946ef !important;
-                background: none !important;
+                font-size: 40px; margin-bottom: 6px;
+                color: #d946ef !important; background: none !important;
                 -webkit-text-fill-color: #d946ef !important;
             }
 
-            .title {
-                margin-bottom: 10px;
-                font-size: 22px;
-            }
+            .title { margin-bottom: 10px; font-size: 22px; }
+            .contact { gap: 12px; margin-bottom: 10px; font-size: 13px; }
+            .contact-item a { color: #0066cc !important; text-decoration: none !important; }
 
-            .contact {
-                gap: 12px;
-                margin-bottom: 10px;
-                font-size: 13px;
-            }
-
-            .contact-item a {
-                color: #0066cc !important;
-                text-decoration: none !important;
-            }
-            
+            /* FIX: Force horizontal row in PDF */
             .social-links {
-                gap: 10px;
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: nowrap !important;
+                justify-content: center !important;
+                align-items: center !important;
+                gap: 10px !important;
                 margin-top: 10px;
                 margin-bottom: 15px;
             }
-            
+
             .social-btn {
-                padding: 6px 14px;
-                font-size: 12px;
+                display: inline-flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                padding: 5px 12px !important;
+                font-size: 11px !important;
+                gap: 5px !important;
             }
-            
-            .social-btn svg {
-                width: 14px;
-                height: 14px;
-            }
+
+            .social-btn svg { width: 13px !important; height: 13px !important; }
 
             .section-title {
-                page-break-after: avoid;
-                break-after: avoid;
-                page-break-inside: avoid;
-                break-inside: avoid;
-                margin-bottom: 12px;
-                padding-bottom: 5px;
-                font-size: 26px;
+                page-break-after: avoid; break-after: avoid;
+                page-break-inside: avoid; break-inside: avoid;
+                margin-bottom: 12px; padding-bottom: 5px; font-size: 26px;
             }
 
-            .section {
-                margin-bottom: 18px;
-                page-break-inside: auto;
-            }
+            .section { margin-bottom: 18px; page-break-inside: auto; }
+            .section:first-of-type { page-break-before: avoid; break-before: avoid; margin-bottom: 18px; }
+            .section:nth-of-type(2) { page-break-before: avoid; break-before: avoid; }
 
-            .section:first-of-type {
-                page-break-before: avoid;
-                break-before: avoid;
-                margin-bottom: 18px;
-            }
+            .profile-text { font-size: 13px; line-height: 1.45; }
 
-            .profile-text {
-                font-size: 13px;
-                line-height: 1.45;
-            }
+            .job { page-break-inside: avoid; break-inside: avoid; margin-bottom: 15px; }
+            .job-title { font-size: 17px; }
+            .job li { margin-bottom: 5px; line-height: 1.35; font-size: 13px; }
+            .company { margin-bottom: 10px; font-size: 14px; }
+            .job-date { font-size: 13px; }
 
-            .section:nth-of-type(2) {
-                page-break-before: avoid;
-                break-before: avoid;
-            }
+            .project { page-break-inside: avoid; break-inside: avoid; margin-bottom: 15px; }
+            .project-name { font-size: 16px; margin-bottom: 5px; }
+            .project li { margin-bottom: 4px; line-height: 1.35; font-size: 13px; }
 
-            .job {
-                page-break-inside: avoid;
-                break-inside: avoid;
-                margin-bottom: 15px;
-            }
+            .achievement { page-break-inside: avoid; break-inside: avoid; padding: 10px 10px 10px 28px; margin-bottom: 7px; }
+            .achievement::before { top: 10px; }
+            .achievement-text { line-height: 1.35; font-size: 13px; }
 
-            .job-title {
-                font-size: 17px;
-            }
+            .skills-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+            .skill-tag { padding: 5px 12px; margin: 0; display: inline-block; page-break-inside: avoid; break-inside: avoid; font-size: 12px; }
 
-            .job li {
-                margin-bottom: 5px;
-                line-height: 1.35;
-                font-size: 13px;
-            }
+            .education-item { margin-bottom: 10px; }
+            .degree { font-size: 15px; }
+            .institution { font-size: 14px; }
+            .cgpa { font-size: 13px; }
 
-            .company {
-                margin-bottom: 10px;
-                font-size: 14px;
-            }
+            .accomplishments-section { margin-top: 12px; }
+            .accomplishment-category { page-break-inside: avoid; break-inside: avoid; margin-bottom: 10px; }
+            .accomplishment-category h3 { margin-bottom: 6px; font-size: 16px; }
+            .accomplishment-category li { margin-bottom: 4px; font-size: 13px; }
 
-            .job-date {
-                font-size: 13px;
-            }
-
-            .project {
-                page-break-inside: avoid;
-                break-inside: avoid;
-                margin-bottom: 15px;
-            }
-
-            .project-name {
-                font-size: 16px;
-                margin-bottom: 5px;
-            }
-
-            .project li {
-                margin-bottom: 4px;
-                line-height: 1.35;
-                font-size: 13px;
-            }
-
-            .achievement {
-                page-break-inside: avoid;
-                break-inside: avoid;
-                padding: 10px;
-                margin-bottom: 7px;
-            }
-
-            .achievement::before {
-                top: 10px;
-            }
-
-            .achievement-text {
-                line-height: 1.35;
-                font-size: 13px;
-            }
-
-            .skills-container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-                margin-bottom: 18px;
-            }
-
-            .skill-tag {
-                padding: 5px 12px;
-                margin: 0;
-                display: inline-block;
-                page-break-inside: avoid;
-                break-inside: avoid;
-                font-size: 12px;
-            }
-
-            .education-item {
-                margin-bottom: 10px;
-            }
-
-            .degree {
-                font-size: 15px;
-            }
-
-            .institution {
-                font-size: 14px;
-            }
-
-            .cgpa {
-                font-size: 13px;
-            }
-
-            .accomplishments-section {
-                margin-top: 12px;
-            }
-
-            .accomplishment-category {
-                page-break-inside: avoid;
-                break-inside: avoid;
-                margin-bottom: 10px;
-            }
-
-            .accomplishment-category h3 {
-                margin-bottom: 6px;
-                font-size: 16px;
-            }
-
-            .accomplishment-category li {
-                margin-bottom: 4px;
-                font-size: 13px;
-            }
-
-            @page {
-                margin: 0.5in 0.6in;
-                size: letter;
-            }
-
-            p, li {
-                orphans: 3;
-                widows: 3;
-            }
+            @page { margin: 0.5in 0.6in; size: letter; }
+            p, li { orphans: 3; widows: 3; }
         }
 
         @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-            }
-            .name {
-                font-size: 36px;
-            }
-            .title {
-                font-size: 22px;
-            }
-            .section-title {
-                font-size: 26px;
-            }
-            .job-header {
-                flex-direction: row;
-            }
-            .print-btn {
-                bottom: 20px;
-                right: 20px;
-                padding: 12px 24px;
-                font-size: 14px;
-            }
-            .social-links {
-                flex-direction: row;
-                align-items: center;
-            }
+            .container { padding: 30px 20px; }
+            .name { font-size: 36px; }
+            .title { font-size: 22px; }
+            .section-title { font-size: 26px; }
+            .job-header { flex-direction: column; }
+            .print-btn { bottom: 20px; right: 20px; padding: 12px 24px; font-size: 14px; }
         }
     </style>
 </head>
@@ -609,22 +239,25 @@
                 <span class="contact-item">&#128222; +91-9398242064</span>
                 <span class="contact-item">&#128205; India</span>
             </div>
-            
-            <!-- Social Links -->
+
             <div class="social-links">
-                <a href="mailto:praveenreddy.yallayyagari@gmail.com" class="social-btn gmail-btn">
+                <!-- FIX: Opens Gmail compose in browser tab instead of mailto -->
+                <a href="https://mail.google.com/mail/?view=cm&to=praveenreddy.yallayyagari@gmail.com"
+                   target="_blank" class="social-btn gmail-btn">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.545l8.073-6.052C21.69 2.28 24 3.434 24 5.457z"/>
                     </svg>
                     Gmail
                 </a>
-                <a href="https://www.linkedin.com/in/praveenreddy-yallayyagari-dataengineer/" target="_blank" class="social-btn linkedin-btn">
+                <a href="https://www.linkedin.com/in/praveenreddy-yallayyagari-dataengineer/"
+                   target="_blank" class="social-btn linkedin-btn">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
                     LinkedIn
                 </a>
-                <a href="https://github.com/PraveenReddy789" target="_blank" class="social-btn github-btn">
+                <a href="https://github.com/PraveenReddy789"
+                   target="_blank" class="social-btn github-btn">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
                     </svg>
@@ -642,7 +275,6 @@
 
         <div class="section">
             <h2 class="section-title">Experience</h2>
-            
             <div class="job">
                 <div class="job-header">
                     <h3 class="job-title">Data Engineer</h3>
@@ -694,7 +326,6 @@
 
         <div class="section">
             <h2 class="section-title">Projects</h2>
-            
             <div class="project">
                 <h3 class="project-name">AI Analytics Chatbot</h3>
                 <ul>
@@ -703,7 +334,6 @@
                     <li>Implemented automated PDF report generation with customizable templates, reducing monthly reporting time from 4 hours to under 30 seconds for stakeholders.</li>
                 </ul>
             </div>
-
             <div class="project">
                 <h3 class="project-name">AI Brainstorming Chatbot</h3>
                 <ul>
@@ -711,7 +341,6 @@
                     <li>Integrated secure token-based authentication with request validation, mitigating 90% of unauthorized API access attempts.</li>
                 </ul>
             </div>
-
             <div class="project">
                 <h3 class="project-name">Serverless ChatGPT App on AWS</h3>
                 <ul>
@@ -719,7 +348,6 @@
                     <li>Implemented AWS Bedrock integration for LLM inference, reducing backend cost by 30% through on-demand provisioning and CloudWatch monitoring.</li>
                 </ul>
             </div>
-
             <div class="project">
                 <h3 class="project-name">AWS ETL Data Pipeline</h3>
                 <ul>
@@ -776,7 +404,6 @@
 
         <div class="section accomplishments-section">
             <h2 class="section-title">Accomplishments</h2>
-            
             <div class="accomplishment-category">
                 <h3>Certifications</h3>
                 <ul>
@@ -784,7 +411,6 @@
                     <li><strong>Google AI Essentials</strong> - Coursera</li>
                 </ul>
             </div>
-
             <div class="accomplishment-category">
                 <h3>Awards</h3>
                 <ul>
